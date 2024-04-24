@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Search() {
+function Search( { searchValue, onSearch } ) {
+
   return (
     <div className="ui search">
       <div className="ui icon input">
-        <input className="prompt" />
+        <input className="prompt" value={searchValue} onChange={(e)=>onSearch(e.target.value.toLowerCase())}/>
         <i className="search icon" />
       </div>
     </div>
